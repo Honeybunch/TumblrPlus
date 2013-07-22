@@ -1,0 +1,13 @@
+C:\Users\Arsen\Documents\Projects\AndroidTest\AndroidTest\bin\Debug\AndroidTest.dll
+C:\Users\Arsen\Documents\Projects\AndroidTest\AndroidTest\bin\Debug\AndroidTest.pdb
+C:\Users\Arsen\Documents\Projects\AndroidTest\AndroidTest\bin\Debug\AndroidTest.dll.mdb
+C:\Users\Arsen\Documents\Projects\AndroidTest\AndroidTest\bin\Debug\AndroidTest.AndroidTest.apk
+C:\Users\Arsen\Documents\Projects\AndroidTest\AndroidTest\bin\Debug\AndroidTest.AndroidTest-Signed.apk
+C:\Users\Arsen\Documents\Projects\AndroidTest\AndroidTest\obj\Debug\AndroidTest.dll
+C:\Users\Arsen\Documents\Projects\AndroidTest\AndroidTest\obj\Debug\AndroidTest.pdb
+C:\Users\Arsen\Documents\Projects\AndroidTest\AndroidTest\obj\Debug\android\bin\AndroidTest.AndroidTest.apk
+C:\Users\Arsen\Documents\Projects\AndroidTest\AndroidTest\obj\Debug\res\layout\main.xml
+C:\Users\Arsen\Documents\Projects\AndroidTest\AndroidTest\obj\Debug\res\values\strings.xml
+C:\Users\Arsen\Documents\Projects\AndroidTest\AndroidTest\obj\Debug\res\drawable\icon.png
+C:\Users\Arsen\Documents\Projects\AndroidTest\AndroidTest\obj\Debug\R.cs.flag
+C:\Users\Arsen\Documents\Projects\AndroidTest\AndroidTest\obj\Debug\uploadflags.txt
