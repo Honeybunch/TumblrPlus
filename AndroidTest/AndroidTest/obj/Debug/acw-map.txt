@@ -1,2 +1,3 @@
 AndroidTest.MainActivity;androidtest.MainActivity
-AndroidTest.DashActivity;androidtest.DashActivity
+AndroidTest.LoginActivity;androidtest.LoginActivity
+AndroidTest.LoginBrowser;androidtest.LoginBrowser
