@@ -14,8 +14,8 @@ namespace AndroidTest
 {
 	class LoginBrowser : WebViewClient
 	{
-		public delegate void GotAuthEventHandler (object sender, AuthTokenArgs e);
-		public event GotAuthEventHandler gotAuthTokens;
+		public delegate void GotAuthEventHandler (object sender, AuthVerifierArgs e);
+		public event GotAuthEventHandler gotAuthVerifier;
 
 		public override bool ShouldOverrideUrlLoading(WebView view, String url)
 		{
@@ -29,10 +29,15 @@ namespace AndroidTest
 			{
 				String authTokens = url.Substring (callbackURL.Length + 1);
 
-				if (gotAuthTokens != null) {
-					AuthTokenArgs authArgs = new AuthTokenArgs ();
-					authArgs.AuthTokens = authTokens;
-					gotAuthTokens (this, authArgs);
+				if (gotAuthVerifier != null) {
+					AuthVerifierArgs authArgs = new AuthVerifierArgs ();
+
+					int splitIndex = authTokens.IndexOf ("&");
+					String authVerifier = authTokens.Substring (splitIndex);
+					authVerifier = authVerifier.Substring (0, authVerifier.Length - 4);
+
+					authArgs.AuthVerifier = authVerifier;
+					gotAuthVerifier (this, authArgs);
 				}
 
 				return true;
@@ -42,18 +47,18 @@ namespace AndroidTest
 	}
 
 	//The event args to pass the authentication tokens
-	public class AuthTokenArgs : EventArgs
+	public class AuthVerifierArgs : EventArgs
 	{
-		private String authTokens;
-		public String AuthTokens
+		private String authVerifier;
+		public String AuthVerifier
 		{
 			get
 			{
-				return authTokens;
+				return authVerifier;
 			}
 			set
 			{
-				authTokens = value;
+				authVerifier = value;
 			}
 		}
 	}

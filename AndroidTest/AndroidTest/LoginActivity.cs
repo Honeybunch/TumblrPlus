@@ -47,10 +47,10 @@ namespace AndroidTest
 			webLogin.SetWebViewClient(loginBrowser);
 			webLogin.LoadUrl ("http://www.tumblr.com/oauth/authorize/?" + loginTokens);
 
-			loginBrowser.gotAuthTokens += new LoginBrowser.GotAuthEventHandler (GotCallback);
+			loginBrowser.gotAuthVerifier += new LoginBrowser.GotAuthEventHandler (GotCallback);
 		}
 	
-		void GotCallback(object sender, AuthTokenArgs e)
+		void GotCallback(object sender, AuthVerifierArgs e)
 		{
 			//Not going back to the main activity, so we get the access tokens here
 			WebClient client = new WebClient();
@@ -60,16 +60,21 @@ namespace AndroidTest
 			//Generate another signature
 			OAuthBase oauth = new OAuthBase ();
 
+			//Seperate the token and the token secret
+			int splitIndex = loginTokens.IndexOf ("&");
+			String token = loginTokens.Substring (12, splitIndex - 12);
+			String tokenSecret = loginTokens.Remove (0, splitIndex + 1);
+			tokenSecret = tokenSecret.Substring (19, tokenSecret.IndexOf("&") - 19);
+
+			String authVerifier = e.AuthVerifier;
 			String normalizedURL;
 			String normalizedParameters;
+			String oauthNonce = oauth.GenerateNonce();
 
-			String oauthNonce = oauth.GenerateNonce ();
-			String oauthSignature = oauth.GenerateSignature (new Uri(accessUrl), oauthKey, oauthSecret, "", "", "GET", timestamp, oauthNonce, out normalizedURL, out normalizedParameters);
+			String oauthSignature = oauth.GenerateSignature (new Uri(accessUrl), oauthKey, oauthSecret, token, tokenSecret, "GET", timestamp, oauthNonce, out normalizedURL, out normalizedParameters);
 
-			Uri oauthAccessUri = new Uri(normalizedURL +"?" + normalizedParameters + "&oauth_signature=" + oauthSignature);
-
-			String oauthAccessUrl = oauthAccessUri.AbsoluteUri;
-
+			String oauthAccessUrl = normalizedURL +"?" + normalizedParameters + authVerifier + "&oauth_signature=" + oauthSignature;
+			oauthAccessUrl = oauthAccessUrl.Replace ("+", "%2b"); //Encode the + so that it will work in the URL
 
 			Console.WriteLine (oauthAccessUrl);
 

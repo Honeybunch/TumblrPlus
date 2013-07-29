@@ -114,13 +114,10 @@ namespace AndroidTest
 			public const int oauth_secret = 2130968579;
 			
 			// aapt resource value: 0x7f040004
-			public const int request_string = 2130968580;
+			public const int token_key = 2130968580;
 			
 			// aapt resource value: 0x7f040005
-			public const int token_key = 2130968581;
-			
-			// aapt resource value: 0x7f040006
-			public const int token_secret = 2130968582;
+			public const int token_secret = 2130968581;
 			
 			static String()
 			{

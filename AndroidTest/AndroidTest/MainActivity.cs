@@ -1,5 +1,6 @@
 using System;
 using System.Net;
+using System.Web;
 using Android.App;
 using Android.Content;
 using Android.Runtime;
@@ -57,7 +58,7 @@ namespace AndroidTest
 			String oauthSignature = oauth.GenerateSignature(new Uri(baseURL),oauthKey, oauthSecret, "", "", "GET", timestamp.ToString(),  oauthNonce, out normalizedURL, out normalizedParameters);
 
 			String oauthTokenUrl = normalizedURL +"?" + normalizedParameters + "&oauth_signature=" + oauthSignature;
-			oauthTokenUrl = oauthTokenUrl.Replace (" ", "+");
+			oauthTokenUrl = oauthTokenUrl.Replace ("+", "%2b");
 
 			Console.WriteLine(oauthTokenUrl);
 
