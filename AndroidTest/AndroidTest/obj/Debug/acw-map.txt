@@ -1,3 +1,0 @@
-AndroidTest.MainActivity;androidtest.MainActivity
-AndroidTest.LoginActivity;androidtest.LoginActivity
-AndroidTest.LoginBrowser;androidtest.LoginBrowser
