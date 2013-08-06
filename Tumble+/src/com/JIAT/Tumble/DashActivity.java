@@ -1,9 +1,9 @@
 package com.JIAT.Tumble;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.widget.*;
@@ -35,6 +35,7 @@ public class DashActivity extends Activity implements View.OnClickListener, Scro
         //Setup the listeners
         refreshButton = (Button)findViewById(R.id.refreshButton);
         refreshButton.setOnClickListener(this);
+        refreshButton.setTextColor(Color.BLACK);
 
         scrollView = (ObservableScrollView)findViewById(R.id.scrollView);
         scrollView.setScrollViewListener(this);
@@ -66,8 +67,49 @@ public class DashActivity extends Activity implements View.OnClickListener, Scro
 
         for(int i = 0; i < page.getPosts().size(); i++)
         {
+
             Post post = page.getPosts().get(i);
-            PostLayout postLayout = new PostLayout(this, post);
+            String type = post.getType();
+
+            PostLayout postLayout = null;
+
+            //Can't run a string switch, use if/else chain
+            if(type.equals("answer"))
+            {
+                postLayout = new AnswerPostLayout(this, post);
+            }
+            else if(type.equals("audio"))
+            {
+                postLayout = new AudioPostLayout(this, post);
+            }
+            else if(type.equals("chat"))
+            {
+                postLayout = new ChatPostLayout(this, post);
+            }
+            else if(type.equals("photo"))
+            {
+                postLayout = new PhotoPostLayout(this, post);
+            }
+            else if(type.equals("link"))
+            {
+                postLayout = new LinkPostLayout(this, post);
+            }
+            else if(type.equals("quote"))
+            {
+                postLayout = new QuotePostLayout(this, post);
+            }
+            else if(type.equals("text"))
+            {
+                postLayout = new TextPostLayout(this, post);
+            }
+            else if(type.equals("video"))
+            {
+                postLayout = new VideoPostLayout(this, post);
+            }
+            else
+            {
+                postLayout = new PostLayout(this, post);
+            }
 
             dashListLayout.addView(postLayout, layoutParams);
         }
@@ -102,6 +144,12 @@ public class DashActivity extends Activity implements View.OnClickListener, Scro
         {
             refreshButton.setText("Refresh");
         }
+    }
+
+    //Don't wan the back button to send us to the MainActivity
+    public void onBackPressed()
+    {
+
     }
 
 }

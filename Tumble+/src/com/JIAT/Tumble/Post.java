@@ -18,6 +18,21 @@ class Photo
     private int height;
     private String url;
 
+    public int getWidth()
+    {
+        return width;
+    }
+
+    public int getHeight()
+    {
+        return height;
+    }
+
+    public String getUrl()
+    {
+        return  url;
+    }
+
     public String toString()
     {
         StringBuilder builder = new StringBuilder();
@@ -35,6 +50,25 @@ class PhotoObject
     private String caption;
     private ArrayList<Photo> alt_sizes;
     private Photo original_size;
+
+    /*
+    * Getters!
+    * */
+
+    public String getCaption()
+    {
+        return caption;
+    }
+
+    public ArrayList<Photo> getAlt_sizes()
+    {
+        return alt_sizes;
+    }
+
+    public Photo getOriginal_size()
+    {
+        return original_size;
+    }
 
     public String toString()
     {
@@ -57,7 +91,7 @@ class PhotoObject
 
 public class Post {
 
-    //General Post data
+    //All Possible Post Data
     private String blog_name;
     private String id;
     private String post_url;
@@ -74,14 +108,28 @@ public class Post {
     private ArrayList<String> highlighted;
     private boolean liked;
     private String note_count;
+    private boolean can_reply;
+
+    //For Photo posts
     private String caption;
     private String image_permalink;
     private ArrayList<PhotoObject> photos;
-    private boolean can_reply;
     private String source_url;
     private String source_title;
+
+    //For Answer posts
+    private String asking_name;
+    private String asking_url;
+    private String question;
+    private String answer;
+
+    //For Text posts
     private String title;
     private String body;
+
+    /*
+    * Getter functions
+    * */
 
     public String getBlog_name()
     {
@@ -92,6 +140,50 @@ public class Post {
     {
         return type;
     }
+
+    public ArrayList<String> getTags()
+    {
+        return tags;
+    }
+
+    public String getNote_count()
+    {
+        return note_count;
+    }
+
+    public boolean getCan_reply()
+    {
+        return can_reply;
+    }
+
+    //Getters for Answer posts
+    public String getAsking_name()
+    {
+        return asking_name;
+    }
+
+    public String getAsking_url()
+    {
+        return asking_url;
+    }
+
+    public String getQuestion()
+    {
+        return question;
+    }
+
+    public String getAnswer()
+    {
+        return answer;
+    }
+
+    //Getters for Photo posts
+    public ArrayList<PhotoObject> getPhotos()
+    {
+        return photos;
+    }
+
+
 
     //Print return the post in an easy to read format
     public String toString()
