@@ -44,7 +44,7 @@ public class DashActivity extends Activity implements View.OnClickListener, Scro
     //Refreshes JSON data
     private void refresh()
     {
-        jsonData = OAuthHelper.OAuthRequest("http://api.tumblr.com/v2/user/dashboard", "GET", OAuthHelper.oauthAccessToken, OAuthHelper.oauthAccessSecret, "");
+        jsonData = OAuthHelper.OAuthRequest("http://api.tumblr.com/v2/user/dashboard", "GET", OAuthHelper.oauthAccessToken, OAuthHelper.oauthAccessSecret, "", "&reblog_info=true");
 
 
         LinearLayout dashListLayout = (LinearLayout)findViewById(R.id.dashListLayout);

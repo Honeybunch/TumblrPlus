@@ -1,7 +1,6 @@
 package com.JIAT.Tumble;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.ShapeDrawable;
@@ -35,7 +34,7 @@ public class PostLayout extends LinearLayout implements OnClickListener{
     protected LinearLayout mainLayout;
     protected LinearLayout footerLayout;
     protected LinearLayout footerSubLayout;
-    protected LinearLayout tagsLayout;
+    protected FlowLayout tagsLayout;
 
     protected ImageView blogAvatar;
     protected TextView blogName;
@@ -78,13 +77,19 @@ public class PostLayout extends LinearLayout implements OnClickListener{
         footerButtonLayout.setGravity(Gravity.RIGHT);
         footerButtonLayout.setWeightSum(5);
 
-        tagsLayout = new LinearLayout(context);
-        tagsLayout.setOrientation(LinearLayout.HORIZONTAL);
-        tagsLayout.setGravity(Gravity.BOTTOM);
+        tagsLayout = new FlowLayout(context);
+        tagsLayout.setHorizontalSpacing(5);
+        tagsLayout.setVerticalSpacing(1);
         tagsLayout.setPadding(0,20, 0, 0);
+
+        LayoutParams mainParams = new LayoutParams(
+                LayoutParams.MATCH_PARENT,
+                LayoutParams.WRAP_CONTENT
+        );
 
         mainLayout = new LinearLayout(context);
         mainLayout.setOrientation(LinearLayout.VERTICAL);
+        mainLayout.setLayoutParams(mainParams);
 
         //Setup Header
 

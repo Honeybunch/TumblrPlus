@@ -2,13 +2,11 @@ package com.JIAT.Tumble;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Rect;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
@@ -104,7 +102,44 @@ class BitmapDownloader extends AsyncTask<String, Void, Bitmap>
         {
             url = new URL(requestUrl[0]);
             URLConnection connection = url.openConnection();
-            data = BitmapFactory.decodeStream(connection.getInputStream());
+
+            /*
+            * We can't just decode our bitmap image from the stream. If we do too many,
+            * we'll run out of memory! We have to check the size of the image,
+            * then properly decode the bitmap in an efficient manner.
+            *
+            * the options.inJustDecodeBounds = true setting will allows to read
+            * the size of the bitmap without fully downloading it.
+            *
+            * Then we'll turn that option off and download a scaled version of the bitmap.
+            * */
+
+            BitmapFactory.Options options = new BitmapFactory.Options();
+            options.inJustDecodeBounds = true;
+            options.inSampleSize = 1;
+
+            //Read the entire image as an array of bytes.
+            //Shouldn't cause memory issue because it will be disposed of later
+            InputStream imageStream = connection.getInputStream();
+            byte[] imageBytes = readInputStream(imageStream);
+
+            if(imageBytes == null)
+            {
+                throw new Exception();
+            }
+
+            //This will write some data into the options
+            BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.length, options);
+
+            int imageHeight = options.outHeight;
+            int imageWidth = options.outHeight;
+
+            //500x500 is our max size
+            options.inSampleSize = calculateInSampleSize(options, 500,500);
+
+            //Make sure we can actually return a bitmap
+            options.inJustDecodeBounds = false;
+            data = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.length, options);
         }
         catch (MalformedURLException e)
         {
@@ -134,6 +169,57 @@ class BitmapDownloader extends AsyncTask<String, Void, Bitmap>
         //By this point, our data string has been filled and we can return it
         return data;
     }
+
+    //Some private functions to aid with bitmap decoding
+
+    private int calculateInSampleSize(BitmapFactory.Options options, int reqWidth, int reqHeight)
+    {
+        //Raw height and width of image
+        final int height = options.outHeight;
+        final int width = options.outHeight;
+        int inSampleSize = 1;
+
+        //If the actual height of the image is greater than our
+        //Required height, we're going to get the factor to scale the image by
+        if(height > reqHeight || width > reqWidth)
+        {
+            //Calculate rounded ratios
+            final int heightRatio = Math.round((float)height / (float)reqHeight);
+            final int widthRatio = Math.round((float)width / (float)reqWidth);
+
+            //Choose the smallest sample size of the two to report back
+            //If the height ratio is less, use height ratio, otherwise use width ratio
+            inSampleSize = heightRatio < widthRatio ? heightRatio : widthRatio;
+        }
+
+        return inSampleSize;
+    }
+
+    private byte[] readInputStream(InputStream stream)
+    {
+        ByteArrayOutputStream buffer = new ByteArrayOutputStream();
+
+        int read = 0;
+        byte[] data = new byte[16384]; //Arbitrary size
+
+        try{
+            //read the data, save it, and continue reading if there's no error
+            while((read = stream.read(data, 0, data.length)) != -1)
+            {
+                buffer.write(data, 0, read);
+            }
+
+            buffer.flush();
+            return buffer.toByteArray();
+        }
+        catch (Exception e)
+        {
+            Log.e("Error: ", "Cannot Read InputStream", e);
+        }
+        //If we get this far, return null
+        return null;
+    }
+
 }
 
 

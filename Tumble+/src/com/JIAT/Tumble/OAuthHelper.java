@@ -47,7 +47,7 @@ public class OAuthHelper {
     {
         String baseUrl = "http://www.tumblr.com/oauth/request_token";
 
-        String tokenData = OAuthRequest(baseUrl, "GET", "", "", "");
+        String tokenData = OAuthRequest(baseUrl, "GET", "", "", "", "");
 
         if(tokenData.equals(null) || tokenData.equals(""))
         {
@@ -71,7 +71,7 @@ public class OAuthHelper {
     {
         String baseUrl = "http://www.tumblr.com/oauth/access_token";
 
-        String tokenData = OAuthRequest (baseUrl, "GET", oauthRequestToken, oauthRequestSecret, oauthVerifier);
+        String tokenData = OAuthRequest (baseUrl, "GET", oauthRequestToken, oauthRequestSecret, oauthVerifier, "");
 
         if(tokenData.equals(null) || tokenData.equals(""))
         {
@@ -90,7 +90,7 @@ public class OAuthHelper {
     }
 
     //Performs a basic OAuth Request and returns the callback
-    public static String OAuthRequest(String baseUrl, String requestType, String token, String tokenSecret, String verifier)
+    public static String OAuthRequest(String baseUrl, String requestType, String token, String tokenSecret, String verifier, String parameters)
     {
         //Gather all required data to generate the signature
         String oauthKey = oauthConsumerKey;
@@ -101,7 +101,7 @@ public class OAuthHelper {
 
         String oauthSignature;
         try{
-            oauthSignature = generateSignature(baseUrl, requestType, nonce, timestamp, token, tokenSecret, verifier);
+            oauthSignature = generateSignature(baseUrl, requestType, nonce, timestamp, token, tokenSecret, verifier, parameters);
         }
         catch (Exception e)
         {
@@ -132,6 +132,7 @@ public class OAuthHelper {
             builder.append("&oauth_verifier=");
             builder.append(verifier);
         }
+        builder.append(parameters);
         builder.append("&oauth_signature=");
         builder.append(oauthSignature);
 
@@ -152,7 +153,7 @@ public class OAuthHelper {
     }
 
     //Return a base64 encoded signature for the OAuth request
-    private static String generateSignature(String base, String type, String nonce, String timestamp, String token, String tokenSecret, String verifier)
+    private static String generateSignature(String base, String type, String nonce, String timestamp, String token, String tokenSecret, String verifier, String parameters)
         throws NoSuchAlgorithmException, InvalidKeyException
     {
         String encodedBase = Uri.encode(base);
@@ -178,6 +179,7 @@ public class OAuthHelper {
             builder.append(verifier);
         }
         builder.append("&oauth_version=1.0");
+        builder.append(parameters);
 
 
         String params = builder.toString();

@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.shapes.RoundRectShape;
 import android.text.Html;
+import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -35,9 +36,15 @@ public class AnswerPostLayout extends PostLayout{
 
         answerLayout = new LinearLayout(context);
 
+        LayoutParams questionParams = new LayoutParams(
+                LayoutParams.MATCH_PARENT,
+                LayoutParams.WRAP_CONTENT
+        );
+
         question = new TextView(context);
         question.setTextColor(Color.BLACK);
         question.setText(post.getQuestion());
+        question.setLayoutParams(questionParams);
 
         asker = new TextView(context);
         asker.setTextColor(Color.BLACK);
