@@ -183,7 +183,7 @@ public class OAuthHelper {
 
 
         String params = builder.toString();
-        //Percent encoded the whole url
+        //Percent encoded the parameters
         String encodedParams = Uri.encode(params);
 
         String completeUrl = type + "&" + encodedBase + "&" + encodedParams;
