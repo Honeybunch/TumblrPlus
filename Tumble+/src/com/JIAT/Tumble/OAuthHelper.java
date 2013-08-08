@@ -20,7 +20,9 @@ import android.os.AsyncTask;
 import android.util.Base64;
 import android.util.Log;
 
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.TimeZone;
 
 import javax.crypto.Mac;
@@ -47,7 +49,7 @@ public class OAuthHelper {
     {
         String baseUrl = "http://www.tumblr.com/oauth/request_token";
 
-        String tokenData = OAuthRequest(baseUrl, "GET", "", "", "", "");
+        String tokenData = OAuthRequest(baseUrl, "GET", "", "", "", null);
 
         if(tokenData.equals(null) || tokenData.equals(""))
         {
@@ -71,7 +73,7 @@ public class OAuthHelper {
     {
         String baseUrl = "http://www.tumblr.com/oauth/access_token";
 
-        String tokenData = OAuthRequest (baseUrl, "GET", oauthRequestToken, oauthRequestSecret, oauthVerifier, "");
+        String tokenData = OAuthRequest (baseUrl, "GET", oauthRequestToken, oauthRequestSecret, oauthVerifier, null);
 
         if(tokenData.equals(null) || tokenData.equals(""))
         {
@@ -90,7 +92,7 @@ public class OAuthHelper {
     }
 
     //Performs a basic OAuth Request and returns the callback
-    public static String OAuthRequest(String baseUrl, String requestType, String token, String tokenSecret, String verifier, String parameters)
+    public static String OAuthRequest(String baseUrl, String requestType, String token, String tokenSecret, String verifier, ArrayList<String> parameters)
     {
         //Gather all required data to generate the signature
         String oauthKey = oauthConsumerKey;
@@ -132,7 +134,17 @@ public class OAuthHelper {
             builder.append("&oauth_verifier=");
             builder.append(verifier);
         }
-        builder.append(parameters);
+
+        if(parameters != null){
+            //Append all parameters
+            Log.v("URL Params: ", parameters.toString());
+
+            for(int i =0 ; i < parameters.size(); i++)
+            {
+                builder.append("&" + parameters.get(i));
+            }
+        }
+
         builder.append("&oauth_signature=");
         builder.append(oauthSignature);
 
@@ -153,37 +165,51 @@ public class OAuthHelper {
     }
 
     //Return a base64 encoded signature for the OAuth request
-    private static String generateSignature(String base, String type, String nonce, String timestamp, String token, String tokenSecret, String verifier, String parameters)
+    private static String generateSignature(String base, String type, String nonce, String timestamp, String token, String tokenSecret, String verifier, ArrayList<String> parameters)
         throws NoSuchAlgorithmException, InvalidKeyException
     {
         String encodedBase = Uri.encode(base);
 
         StringBuilder builder = new StringBuilder();
 
-        //These are in alphabetical order
-        builder.append("oauth_consumer_key=");
-        builder.append(oauthConsumerKey);
-        builder.append("&oauth_nonce=");
-        builder.append(nonce);
-        builder.append("&oauth_signature_method=HMAC-SHA1");
-        builder.append("&oauth_timestamp=");
-        builder.append(timestamp);
+        //Create an array of all the parameters
+        //So that we can sort them
+        //OAuth requires that we sort all parameters
+        ArrayList<String> sortingArray = new ArrayList<String>();
+
+        sortingArray.add("oauth_consumer_key=" + oauthConsumerKey);
+        sortingArray.add("oauth_nonce=" + nonce);
+        sortingArray.add("oauth_signature_method=HMAC-SHA1");
+        sortingArray.add("oauth_timestamp=" + timestamp);
+        sortingArray.add("oauth_version=1.0");
+
+        if(parameters != null){
+            sortingArray.addAll(parameters);
+        }
+
         if(token != "" && token != null)
         {
-            builder.append("&oauth_token=");
-            builder.append(token);
+            sortingArray.add("oauth_token=" + token);
         }
         if(verifier != "" && verifier != null)
         {
-            builder.append("&oauth_verifier=");
-            builder.append(verifier);
+            sortingArray.add("oauth_verifier=" + verifier);
         }
-        builder.append("&oauth_version=1.0");
-        builder.append(parameters);
 
+        Collections.sort(sortingArray);
+
+        //Append all parameters to the builder in the right order
+        for(int i =0; i < sortingArray.size(); i++)
+        {
+            if(i > 0)
+                builder.append("&" + sortingArray.get(i));
+            else
+                builder.append(sortingArray.get(i));
+
+        }
 
         String params = builder.toString();
-        //Percent encoded the parameters
+        //Percent encoded the whole url
         String encodedParams = Uri.encode(params);
 
         String completeUrl = type + "&" + encodedBase + "&" + encodedParams;

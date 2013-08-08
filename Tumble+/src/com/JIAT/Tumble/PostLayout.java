@@ -10,7 +10,6 @@ import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.ViewGroup;
 import android.widget.*;
 
 /**
@@ -48,6 +47,13 @@ public class PostLayout extends LinearLayout implements OnClickListener{
 
 
     protected TextView testView;
+
+
+    //Getter
+    public Post getPost()
+    {
+        return post;
+    }
 
     public PostLayout(Context context, Post post)
     {
@@ -201,7 +207,7 @@ public class PostLayout extends LinearLayout implements OnClickListener{
         footerButtonLayout.addView(reblogButton);
         footerButtonLayout.addView(likeButton);
         footerButtonLayout.addView(shareButton);
-        if(post.getCan_reply()){
+        if(post.isCan_reply()){
             footerButtonLayout.addView(replyButton);
         }
         footerButtonLayout.addView(followButton);

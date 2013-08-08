@@ -127,60 +127,97 @@ public class Post {
     private String title;
     private String body;
 
-    /*
-    * Getter functions
-    * */
+    //Getter functions (Generated)
 
-    public String getBlog_name()
-    {
-        return  blog_name;
+    public String getBlog_name() {
+        return blog_name;
     }
-
-    public String getType()
-    {
+    public String getId() {
+        return id;
+    }
+    public String getPost_url() {
+        return post_url;
+    }
+    public String getSlug() {
+        return slug;
+    }
+    public String getType() {
         return type;
     }
-
-    public ArrayList<String> getTags()
-    {
+    public String getDate() {
+        return date;
+    }
+    public String getTimestamp() {
+        return timestamp;
+    }
+    public String getState() {
+        return state;
+    }
+    public String getFormat() {
+        return format;
+    }
+    public String getReblog_key() {
+        return reblog_key;
+    }
+    public ArrayList<String> getTags() {
         return tags;
     }
-
-    public String getNote_count()
-    {
+    public String getShort_url() {
+        return short_url;
+    }
+    public boolean isFollowed() {
+        return followed;
+    }
+    public ArrayList<String> getHighlighted() {
+        return highlighted;
+    }
+    public boolean isLiked() {
+        return liked;
+    }
+    public String getNote_count() {
         return note_count;
     }
-
-    public boolean getCan_reply()
-    {
+    public boolean isCan_reply() {
         return can_reply;
     }
 
-    //Getters for Answer posts
-    public String getAsking_name()
-    {
+    //For Photo Posts
+    public String getCaption() {
+        return caption;
+    }
+    public String getImage_permalink() {
+        return image_permalink;
+    }
+    public ArrayList<PhotoObject> getPhotos() {
+        return photos;
+    }
+    public String getSource_url() {
+        return source_url;
+    }
+    public String getSource_title() {
+        return source_title;
+    }
+
+    //For Answer Posts
+    public String getAsking_name() {
         return asking_name;
     }
-
-    public String getAsking_url()
-    {
+    public String getAsking_url() {
         return asking_url;
     }
-
-    public String getQuestion()
-    {
+    public String getQuestion() {
         return question;
     }
-
-    public String getAnswer()
-    {
+    public String getAnswer() {
         return answer;
     }
 
-    //Getters for Photo posts
-    public ArrayList<PhotoObject> getPhotos()
-    {
-        return photos;
+    //For Text Posts
+    public String getTitle() {
+        return title;
+    }
+    public String getBody() {
+        return body;
     }
 
 

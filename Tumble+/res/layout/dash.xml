@@ -14,13 +14,40 @@
                 android:orientation="vertical"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent" android:id="@+id/dashListLayout">
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:background="#FFFFFF">
+                <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/titleLayout"
+                        android:paddingTop="10dp" android:paddingBottom="10dp">
+                    <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/avatarView" android:focusableInTouchMode="false" android:paddingLeft="10dp"
+                            android:layout_gravity="center"/>
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/titleView" android:layout_gravity="left|center_vertical"
+                            android:paddingLeft="10dp"/>
+                </LinearLayout>
+                <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="fill_parent"
+                        android:layout_height="3dp" android:layout_centerHorizontal="true"
+                        android:layout_alignParentTop="true" android:layout_marginTop="62dp" android:background="#000000">
+                </LinearLayout>
+            </RelativeLayout>
         </LinearLayout>
     </com.JIAT.Tumble.ObservableScrollView>
     <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Refresh"
-            android:padding="10dip"
-            android:layout_margin="10dip"
-            android:id="@+id/refreshButton" android:layout_gravity="right|top"/>
+            android:id="@+id/refreshButton" android:layout_gravity="right|top"
+            android:layout_alignParentBottom="false" android:layout_alignParentRight="true"
+            android:layout_margin="10dp" android:paddingLeft="10dp" android:paddingRight="10dp"
+            android:paddingTop="-10dp"/>
 </FrameLayout>

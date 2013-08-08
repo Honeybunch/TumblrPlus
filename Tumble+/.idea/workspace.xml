@@ -23,6 +23,9 @@
       </GlobalState>
     </option>
   </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="DataThread:" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="7cefd8f7-6721-48a1-b360-f86af592c50d" name="Default" comment="" />
     <ignored path="Tumble+.iws" />
@@ -32,7 +35,7 @@
     <file path="/Dummy.txt" changelist="7cefd8f7-6721-48a1-b360-f86af592c50d" time="1375191925084" ignored="false" />
     <file path="/MainActivity.java" changelist="7cefd8f7-6721-48a1-b360-f86af592c50d" time="1375887248302" ignored="false" />
     <file path="/strings.xml" changelist="7cefd8f7-6721-48a1-b360-f86af592c50d" time="1375193039812" ignored="false" />
-    <file path="/OAuthHelper.java" changelist="7cefd8f7-6721-48a1-b360-f86af592c50d" time="1375919623636" ignored="false" />
+    <file path="/OAuthHelper.java" changelist="7cefd8f7-6721-48a1-b360-f86af592c50d" time="1375993455143" ignored="false" />
     <file path="/fragment.java" changelist="7cefd8f7-6721-48a1-b360-f86af592c50d" time="1375725289526" ignored="false" />
     <file path="/AndroidManifest.xml" changelist="7cefd8f7-6721-48a1-b360-f86af592c50d" time="1375374941738" ignored="false" />
     <file path="/main.xml" changelist="7cefd8f7-6721-48a1-b360-f86af592c50d" time="1375276365589" ignored="false" />
@@ -40,15 +43,15 @@
     <file path="/LoginActivity.java" changelist="7cefd8f7-6721-48a1-b360-f86af592c50d" time="1375389186799" ignored="false" />
     <file path="/LoginBrowser.java" changelist="7cefd8f7-6721-48a1-b360-f86af592c50d" time="1375375699376" ignored="false" />
     <file path="/CallbackListener.java" changelist="7cefd8f7-6721-48a1-b360-f86af592c50d" time="1375374540926" ignored="false" />
-    <file path="/DashActivity.java" changelist="7cefd8f7-6721-48a1-b360-f86af592c50d" time="1375807383699" ignored="false" />
-    <file path="/Post.java" changelist="7cefd8f7-6721-48a1-b360-f86af592c50d" time="1375818138304" ignored="false" />
-    <file path="/Page.java" changelist="7cefd8f7-6721-48a1-b360-f86af592c50d" time="1375715878003" ignored="false" />
-    <file path="/PostLayout.java" changelist="7cefd8f7-6721-48a1-b360-f86af592c50d" time="1375905264725" ignored="false" />
+    <file path="/DashActivity.java" changelist="7cefd8f7-6721-48a1-b360-f86af592c50d" time="1375998674137" ignored="false" />
+    <file path="/Post.java" changelist="7cefd8f7-6721-48a1-b360-f86af592c50d" time="1375982037494" ignored="false" />
+    <file path="/Page.java" changelist="7cefd8f7-6721-48a1-b360-f86af592c50d" time="1375967787572" ignored="false" />
+    <file path="/PostLayout.java" changelist="7cefd8f7-6721-48a1-b360-f86af592c50d" time="1375982097488" ignored="false" />
     <file path="/dash.xml" changelist="7cefd8f7-6721-48a1-b360-f86af592c50d" time="1375725553427" ignored="false" />
     <file path="/ScrollViewListener.java" changelist="7cefd8f7-6721-48a1-b360-f86af592c50d" time="1375725199644" ignored="false" />
     <file path="/ObservableScrollView.java" changelist="7cefd8f7-6721-48a1-b360-f86af592c50d" time="1375725532682" ignored="false" />
     <file path="/ImagePostLayout.java" changelist="7cefd8f7-6721-48a1-b360-f86af592c50d" time="1375793039360" ignored="false" />
-    <file path="/HTTPHelper.java" changelist="7cefd8f7-6721-48a1-b360-f86af592c50d" time="1375886670214" ignored="false" />
+    <file path="/HTTPHelper.java" changelist="7cefd8f7-6721-48a1-b360-f86af592c50d" time="1375998974905" ignored="false" />
     <file path="/AudioPostLayout.java" changelist="7cefd8f7-6721-48a1-b360-f86af592c50d" time="1375794274383" ignored="false" />
     <file path="/ChatPostLayout.java" changelist="7cefd8f7-6721-48a1-b360-f86af592c50d" time="1375794141530" ignored="false" />
     <file path="/QuotePostLayout.java" changelist="7cefd8f7-6721-48a1-b360-f86af592c50d" time="1375794162448" ignored="false" />
@@ -60,6 +63,14 @@
     <file path="/FlowLayout.java" changelist="7cefd8f7-6721-48a1-b360-f86af592c50d" time="1375904132117" ignored="false" />
     <file path="/flowlayoutattrs.xml" changelist="7cefd8f7-6721-48a1-b360-f86af592c50d" time="1375894013984" ignored="false" />
     <file path="/FlowLayout2.java" changelist="7cefd8f7-6721-48a1-b360-f86af592c50d" time="1375903347631" ignored="false" />
+    <file path="/CustomTitle.java" changelist="7cefd8f7-6721-48a1-b360-f86af592c50d" time="1375970501762" ignored="false" />
+    <file path="/TumblrResponse.java" changelist="7cefd8f7-6721-48a1-b360-f86af592c50d" time="1375968479472" ignored="false" />
+    <file path="/ResponseData.java" changelist="7cefd8f7-6721-48a1-b360-f86af592c50d" time="1375967804290" ignored="false" />
+    <file path="/User.java" changelist="7cefd8f7-6721-48a1-b360-f86af592c50d" time="1375969016347" ignored="false" />
+    <file path="/Blog.java" changelist="7cefd8f7-6721-48a1-b360-f86af592c50d" time="1375968814090" ignored="false" />
+    <file path="/PostsWrapper.java" changelist="7cefd8f7-6721-48a1-b360-f86af592c50d" time="1375968608612" ignored="false" />
+    <file path="/UserWrapper.java" changelist="7cefd8f7-6721-48a1-b360-f86af592c50d" time="1375968696173" ignored="false" />
+    <file path="/ThreadListener.java" changelist="7cefd8f7-6721-48a1-b360-f86af592c50d" time="1375997835141" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,11 +131,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="DashActivity.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="DashActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/JIAT/Tumble/DashActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="93" column="103" selection-start="2980" selection-end="2980" vertical-scroll-proportion="0.5566893">
-              <folding />
+            <state line="184" column="42" selection-start="6089" selection-end="6089" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#1296#1308#0" expanded="true" />
+                <element signature="e#1361#1369#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PostThreadListener.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/JIAT/Tumble/PostThreadListener.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="16" selection-start="16" selection-end="16" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -132,52 +157,18 @@
       <file leaf-file-name="OAuthHelper.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/JIAT/Tumble/OAuthHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="132" column="47" selection-start="4166" selection-end="4166" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="225" column="65" selection-start="7060" selection-end="7060" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#5622#5630#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PostLayout.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/JIAT/Tumble/PostLayout.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="205" column="47" selection-start="6686" selection-end="6686" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HTTPHelper.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="HTTPHelper.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/JIAT/Tumble/HTTPHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="230" column="32" selection-start="6933" selection-end="6933" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/JIAT/Tumble/MainActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="68" column="61" selection-start="2015" selection-end="2015" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoginActivity.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/JIAT/Tumble/LoginActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="84" selection-start="1080" selection-end="1080" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoginBrowser.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/JIAT/Tumble/LoginBrowser.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="104" selection-start="154" selection-end="154" vertical-scroll-proportion="0.0">
+            <state line="257" column="66" selection-start="7666" selection-end="7666" vertical-scroll-proportion="0.7021739">
               <folding />
             </state>
           </provider>
@@ -193,30 +184,30 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/com/JIAT/Tumble/TextPostLayout.java" />
-        <option value="$PROJECT_DIR$/src/com/JIAT/Tumble/ChatPostLayout.java" />
-        <option value="$PROJECT_DIR$/src/com/JIAT/Tumble/LinkPostLayout.java" />
-        <option value="$PROJECT_DIR$/src/com/JIAT/Tumble/AudioPostLayout.java" />
-        <option value="$PROJECT_DIR$/src/com/JIAT/Tumble/VideoPostLayout.java" />
+        <option value="$PROJECT_DIR$/src/com/JIAT/Tumble/Page.java" />
+        <option value="$PROJECT_DIR$/src/com/JIAT/Tumble/TumblrResponse.java" />
+        <option value="$PROJECT_DIR$/src/com/JIAT/Tumble/ResponseWrapper.java" />
+        <option value="$PROJECT_DIR$/src/com/JIAT/Tumble/PostsWrapper.java" />
+        <option value="$PROJECT_DIR$/src/com/JIAT/Tumble/UserWrapper.java" />
+        <option value="$PROJECT_DIR$/src/com/JIAT/Tumble/Blog.java" />
+        <option value="$PROJECT_DIR$/src/com/JIAT/Tumble/User.java" />
+        <option value="$PROJECT_DIR$/src/com/JIAT/Tumble/CustomTitle.java" />
+        <option value="$PROJECT_DIR$/res/layout/dash.xml" />
         <option value="$PROJECT_DIR$/src/com/JIAT/Tumble/Post.java" />
-        <option value="$PROJECT_DIR$/src/com/JIAT/Tumble/HTTPHelper.java" />
-        <option value="$PROJECT_DIR$/src/com/JIAT/Tumble/MainActivity.java" />
-        <option value="$PROJECT_DIR$/src/com/JIAT/Tumble/DashActivity.java" />
-        <option value="$PROJECT_DIR$/res/values/flowlayoutattrs.xml" />
-        <option value="$PROJECT_DIR$/src/com/JIAT/Tumble/FlowLayout2.java" />
-        <option value="$PROJECT_DIR$/src/com/JIAT/Tumble/FlowLayout.java" />
-        <option value="$PROJECT_DIR$/src/com/JIAT/Tumble/PhotoPostLayout.java" />
-        <option value="$PROJECT_DIR$/src/com/JIAT/Tumble/AnswerPostLayout.java" />
         <option value="$PROJECT_DIR$/src/com/JIAT/Tumble/PostLayout.java" />
         <option value="$PROJECT_DIR$/src/com/JIAT/Tumble/OAuthHelper.java" />
+        <option value="$PROJECT_DIR$/src/com/JIAT/Tumble/ThreadListener.java" />
+        <option value="$PROJECT_DIR$/src/com/JIAT/Tumble/PostThreadListener.java" />
+        <option value="$PROJECT_DIR$/src/com/JIAT/Tumble/DashActivity.java" />
+        <option value="$PROJECT_DIR$/src/com/JIAT/Tumble/HTTPHelper.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1066" />
+    <option name="width" value="1616" />
+    <option name="height" value="886" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -244,8 +235,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -296,11 +285,51 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tumble" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HTTPHelper.java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tumble+" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tumble+" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="res" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="values" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tumble+" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tumble+" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -334,6 +363,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -563,32 +594,32 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1616" height="886" extended-state="6" />
+    <editor active="true" />
     <layout>
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13642214" sideWeight="0.6620879" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29150578" sideWeight="0.6620879" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913166" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3997253" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32142857" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33846155" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32142857" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32692307" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33241758" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25186765" sideWeight="0.6605634" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31882024" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13642214" sideWeight="0.6675824" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16537966" sideWeight="0.6675824" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31868133" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13706563" sideWeight="0.6675824" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32947233" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32947233" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3286517" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -657,23 +688,44 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/JIAT/Tumble/OAuthHelper.java">
+    <entry file="file://$PROJECT_DIR$/src/com/JIAT/Tumble/FlowLayout.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="126" column="50" selection-start="3362" selection-end="3362" vertical-scroll-proportion="0.0">
+        <state line="60" column="49" selection-start="1900" selection-end="1900" vertical-scroll-proportion="0.12073863">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/JIAT/Tumble/PostLayout.java">
+    <entry file="file://$PROJECT_DIR$/src/com/JIAT/Tumble/AnswerPostLayout.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="41" selection-start="207" selection-end="207" vertical-scroll-proportion="0.0">
+        <state line="45" column="45" selection-start="1309" selection-end="1309" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/JIAT/Tumble/MainActivity.java">
+    <entry file="file://$PROJECT_DIR$/src/com/JIAT/Tumble/ResponseWrapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="75" selection-start="1396" selection-end="1396" vertical-scroll-proportion="0.0">
+        <state line="10" column="40" selection-start="181" selection-end="181" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/JIAT/Tumble/UserWrapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="64" selection-start="546" selection-end="546" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/JIAT/Tumble/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="27" selection-start="729" selection-end="729" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/JIAT/Tumble/Blog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="57" selection-start="707" selection-end="707" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -688,80 +740,76 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
+    <entry file="file://$PROJECT_DIR$/src/com/JIAT/Tumble/PostsWrapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="82" selection-start="217" selection-end="267" vertical-scroll-proportion="0.14750542">
+        <state line="14" column="37" selection-start="259" selection-end="259" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/JIAT/Tumble/CustomTitle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="33" selection-start="1212" selection-end="1212" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/JIAT/Tumble/Post.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="161" column="27" selection-start="3096" selection-end="3096" vertical-scroll-proportion="0.036876354">
+        <state line="204" column="35" selection-start="4241" selection-end="4241" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gen/com/JIAT/Tumble/Manifest.java">
+    <entry file="file://$PROJECT_DIR$/src/com/JIAT/Tumble/ScrollViewListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="19" selection-start="170" selection-end="170" vertical-scroll-proportion="0.0" />
+        <state line="11" column="17" selection-start="228" selection-end="228" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gen/com/JIAT/Tumble/BuildConfig.java">
+    <entry file="file://$PROJECT_DIR$/src/com/JIAT/Tumble/PostThreadListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="19" selection-start="125" selection-end="125" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gen/com/JIAT/Tumble/R.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="11" selection-start="168" selection-end="168" vertical-scroll-proportion="0.26153848" />
+        <state line="0" column="16" selection-start="16" selection-end="16" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/JIAT/Tumble/PostLayout.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="205" column="47" selection-start="6686" selection-end="6686" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/JIAT/Tumble/HTTPHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="230" column="32" selection-start="6933" selection-end="6933" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/JIAT/Tumble/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="61" selection-start="2015" selection-end="2015" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/JIAT/Tumble/LoginBrowser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="104" selection-start="154" selection-end="154" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/JIAT/Tumble/LoginActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="84" selection-start="1080" selection-end="1080" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/JIAT/Tumble/OAuthHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="132" column="47" selection-start="4166" selection-end="4166" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="209" column="29" selection-start="6663" selection-end="6663" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/JIAT/Tumble/DashActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="93" column="103" selection-start="2980" selection-end="2980" vertical-scroll-proportion="0.5566893">
+        <state line="184" column="42" selection-start="6089" selection-end="6089" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#1296#1308#0" expanded="true" />
+            <element signature="e#1361#1369#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/JIAT/Tumble/OAuthHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="225" column="65" selection-start="7060" selection-end="7060" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#5622#5630#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/JIAT/Tumble/HTTPHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="257" column="66" selection-start="7666" selection-end="7666" vertical-scroll-proportion="0.7021739">
           <folding />
         </state>
       </provider>

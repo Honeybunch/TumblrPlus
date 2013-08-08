@@ -31,6 +31,8 @@ class StringDownloader extends AsyncTask<String, Void, String>
 
     protected String doInBackground(String... requestUrl)
     {
+        Log.v("DataThread:", "test");
+
         //We have the URL to perform our request, time to actually go perform the request
         URL url = null;
         InputStream inputStream = null;
@@ -257,6 +259,7 @@ public class HTTPHelper
         try
         {
             dataDownloader.get();
+            Log.v("DataThread: ", "done");
         }
         catch (Exception e)
         {
