@@ -20,16 +20,28 @@ import java.net.URLConnection;
  */
 
 //ASync thread class to download strings outside the main thread
-class StringDownloader extends AsyncTask<String, Void, String>
+class StringDownloader implements Runnable
 {
     private String data = "";
+    private String requestUrl;
+
+    public StringDownloader(String requestUrl)
+    {
+        this.requestUrl = requestUrl;
+    }
 
     public String getData()
     {
         return data;
     }
 
-    protected String doInBackground(String... requestUrl)
+    //Where the thread will start
+    public void run()
+    {
+        doInBackground();
+    }
+
+    protected void doInBackground()
     {
         Log.v("DataThread:", "test");
 
@@ -41,7 +53,7 @@ class StringDownloader extends AsyncTask<String, Void, String>
 
         try
         {
-            url = new URL(requestUrl[0]);
+            url = new URL(requestUrl);
             inputStream = url.openStream();
             bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
 
@@ -75,24 +87,33 @@ class StringDownloader extends AsyncTask<String, Void, String>
                 Log.e("Error", "IO Exception - Closing Stream", e);
             }
         }
-
-        //By this point, our data string has been filled and we can return it
-        return data;
     }
 }
 
 
 //ASync thread class to download strings outside the main thread
-class BitmapDownloader extends AsyncTask<String, Void, Bitmap>
+class BitmapDownloader implements Runnable
 {
     private Bitmap data = null;
+    private String requestUrl;
+
+    public BitmapDownloader(String requestUrl)
+    {
+        this.requestUrl = requestUrl;
+    }
 
     public Bitmap getData()
     {
         return data;
     }
 
-    protected Bitmap doInBackground(String... requestUrl)
+    //Runs when the thread starts
+    public void run()
+    {
+        doInBackground();
+    }
+
+    protected void doInBackground()
     {
         //We have the URL to perform our request, time to actually go perform the request
         URL url = null;
@@ -102,7 +123,7 @@ class BitmapDownloader extends AsyncTask<String, Void, Bitmap>
 
         try
         {
-            url = new URL(requestUrl[0]);
+            url = new URL(requestUrl);
             URLConnection connection = url.openConnection();
 
             /*
@@ -125,6 +146,10 @@ class BitmapDownloader extends AsyncTask<String, Void, Bitmap>
             InputStream imageStream = connection.getInputStream();
             byte[] imageBytes = readInputStream(imageStream);
 
+            //cleanup imageStream
+            imageStream.close();
+            imageStream = null;
+
             if(imageBytes == null)
             {
                 throw new Exception();
@@ -136,8 +161,8 @@ class BitmapDownloader extends AsyncTask<String, Void, Bitmap>
             int imageHeight = options.outHeight;
             int imageWidth = options.outHeight;
 
-            //500x500 is our max size
-            options.inSampleSize = calculateInSampleSize(options, 500,500);
+            //300x300 is our max size
+            options.inSampleSize = calculateInSampleSize(options, 300,300);
 
             //Make sure we can actually return a bitmap
             options.inJustDecodeBounds = false;
@@ -167,9 +192,6 @@ class BitmapDownloader extends AsyncTask<String, Void, Bitmap>
                 Log.e("Error", "IO Exception - Closing Stream", e);
             }
         }
-
-        //By this point, our data string has been filled and we can return it
-        return data;
     }
 
     //Some private functions to aid with bitmap decoding
@@ -230,13 +252,15 @@ public class HTTPHelper
     //Static method to download an image via an AsyncTask
     public static Bitmap downloadImage(String url)
     {
-        BitmapDownloader dataDownloader = new BitmapDownloader();
-        dataDownloader.execute(url);
+        BitmapDownloader dataDownloader = new BitmapDownloader(url);
+        Thread bitmapThread = new Thread(dataDownloader);
+
+        bitmapThread.start();
 
         //Try to wait for the thread to finish
         try
         {
-            dataDownloader.get();
+            bitmapThread.join();
         }
         catch (Exception e)
         {
@@ -244,6 +268,8 @@ public class HTTPHelper
             Log.e("Error", "Exception", e);
             return null;
         }
+
+        bitmapThread = null; //attempt to free some memory
 
         //If we get this far and no exceptions, get the data out of the thread
         return dataDownloader.getData();
@@ -252,13 +278,14 @@ public class HTTPHelper
 
     public static String downloadString(String url)
     {
-        StringDownloader dataDownloader = new StringDownloader();
-        dataDownloader.execute(url);
+        StringDownloader dataDownloader = new StringDownloader(url);
+        Thread stringThread = new Thread(dataDownloader);
+        stringThread.start();
 
         //Try to wait for the thread to finish
         try
         {
-            dataDownloader.get();
+            stringThread.join();
             Log.v("DataThread: ", "done");
         }
         catch (Exception e)
@@ -267,6 +294,8 @@ public class HTTPHelper
             Log.e("Error", "Exception", e);
             return null;
         }
+
+        stringThread = null;
 
         //If we get this far and no exceptions, get the data out of the thread
         return dataDownloader.getData();

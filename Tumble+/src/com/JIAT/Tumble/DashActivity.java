@@ -31,30 +31,29 @@ class PostsSinceThread extends AsyncTask<String, Void, ArrayList<PostLayout>>
 }
 
 //Thread to return trailing posts
-class NewPageThread extends AsyncTask<String, Void, ArrayList<PostLayout>>
+class NewPageThread extends AsyncTask<String, Void, NewPageThread>
 {
     private Context context;
     private int postsPerPage;
     private PostThreadListener listener;
+    private ArrayList<PostLayout> newPosts;
 
     public NewPageThread(PostThreadListener listener, Context context, int postsPerPage)
     {
         this.context = context;
         this.postsPerPage = postsPerPage;
         this.listener = listener;
+
+        newPosts = new ArrayList<PostLayout>();
     }
 
-    protected ArrayList<PostLayout> doInBackground(String...p)
+    protected NewPageThread doInBackground(String...json)
     {
-        ArrayList<PostLayout> newPosts = new ArrayList<PostLayout>();
-
         ArrayList<String> params = new ArrayList<String>();
         params.add("reblog_info=true");
         params.add("limit=" + postsPerPage);
 
-        String jsonData = OAuthHelper.OAuthRequest("http://api.tumblr.com/v2/user/dashboard", "GET", OAuthHelper.oauthAccessToken, OAuthHelper.oauthAccessSecret, "", params);
-
-        Log.v("JSON: ", jsonData);
+        String jsonData = json[0];
 
         //Setup parameters for the post layouts
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
@@ -65,10 +64,6 @@ class NewPageThread extends AsyncTask<String, Void, ArrayList<PostLayout>>
 
         //Create the postsWrapper object based off the JSON string
         PostsWrapper postsWrapper = new Gson().fromJson(jsonData, PostsWrapper.class);
-
-        //Print out all posts in the postsWrapper
-        Log.v("RAW JSON: ", jsonData);
-        Log.v("JSON: ", postsWrapper.toString());
 
         for(int i = 0; i < postsWrapper.getPosts().size(); i++)
         {
@@ -117,10 +112,16 @@ class NewPageThread extends AsyncTask<String, Void, ArrayList<PostLayout>>
 
             postLayout.setLayoutParams(layoutParams);
             newPosts.add(postLayout);
+
+            Log.v("Loading: ", "" + i);
         }
 
+        return this;
+    }
+
+    @Override
+    protected void onPostExecute(NewPageThread newPageThread) {
         listener.onThreadFinished(this, newPosts);
-        return newPosts;
     }
 }
 
@@ -181,10 +182,15 @@ public class DashActivity extends Activity implements View.OnClickListener, Scro
 
         //TODO: Start some identifier that the app is getting content
 
-        //Startup a thread to gather the data without breaking the GUI
+        //The OAuth request is quick, do it here and then pass it to the newPageThread
+        String jsonData = OAuthHelper.OAuthRequest("http://api.tumblr.com/v2/user/dashboard", "GET", OAuthHelper.oauthAccessToken, OAuthHelper.oauthAccessSecret, "", null);
+        Log.v("Test Data: ", jsonData);
+
+
+        //Startup a thread to format the data without breaking the GUI
         //This will alert us when its done
         NewPageThread newPageThread = new NewPageThread(this, this, postsPerPage);
-        newPageThread.execute();
+        newPageThread.execute(jsonData);
     }
 
     private void getNewPosts()
@@ -227,6 +233,11 @@ public class DashActivity extends Activity implements View.OnClickListener, Scro
     //Look at the type of thread and handle its data appropriately
     public void onThreadFinished(AsyncTask thread, ArrayList<PostLayout> posts)
     {
+        for(int i = 0; i < posts.size(); i++)
+        {
+            dashListLayout.addView(posts.get(i));
+        }
+
         //If the thread is a NewPageThread, we'll append its data
         //To the end of the dashListLayout
         if(thread instanceof NewPageThread)
